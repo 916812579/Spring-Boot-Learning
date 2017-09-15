@@ -39,6 +39,26 @@ pom.xml加入如下依赖
 | PUT | /users/id      |    根据id更新一个用户 |
 | DELETE | /users/id      |    根据id删除一个用户 |
 
+### User
+
+    package com.example.demo.model;
+    
+    import lombok.AllArgsConstructor;
+    import lombok.Getter;
+    import lombok.NoArgsConstructor;
+    import lombok.Setter;
+    
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public class User {
+    	private Long id; 
+        private String name; 
+        private Integer age;
+        
+    }
+
 ### User对象的操作接口
     package com.example.demo.web;
     
