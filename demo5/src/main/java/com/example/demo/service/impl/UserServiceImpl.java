@@ -8,6 +8,7 @@ import com.example.demo.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
+	// 注入 JdbcTemplate
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
