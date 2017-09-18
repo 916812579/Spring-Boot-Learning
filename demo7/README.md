@@ -78,7 +78,8 @@ Spring Boot中实现了默认的error映射，但是在实际应用中，默认�
     }  
 
 
-除了上面的这种方法，也可以实现ErrorController。这样，springboot就不会自动创建BasicErrorController了，就会调用我们自己实现的Controller。 
+除了上面的这种方法，也可以实现ErrorController。这样，springboot就不会自动创建BasicErrorController了，就会调用我们自己实现的Controller。
+
 
     package com.example.demo;
     
