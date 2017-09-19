@@ -9,18 +9,19 @@ Spring Boot中实现了默认的error映射，但是在实际应用中，默认�
 
 
 
-- @ControllerAdvice 注解内部使用@ExceptionHandler、@InitBinder、@ModelAttribute注解的方法应用到所有的 @RequestMapping注解的方法
+- `@ControllerAdvice` 注解内部使用`@ExceptionHandler`、`@InitBinder`、`@ModelAttribute`注解的方法应用到所有的 `@RequestMapping`注解的方法
 
 
 使用@ControllerAdvice处理全局异常需要在配置文件中添加如下配置
-    
+```java    
     #出现错误时, 直接抛出异常
     spring.mvc.throw-exception-if-no-handler-found=true
     #不要为我们工程中的资源文件建立映射
     spring.resources.add-mappings=false
-
+```
 
 如下处理全局异常
+```java
     package com.example.demo;
     
     import javax.servlet.http.HttpServletRequest;
@@ -64,9 +65,9 @@ Spring Boot中实现了默认的error映射，但是在实际应用中，默认�
     	}
     
     }
-
-如果期望返回JSON格式，则需要添加@ResponseBody注解
-
+ ```
+如果期望返回JSON格式，则需要添加`@ResponseBody`注解
+```java
     @ExceptionHandler(value = NoHandlerFoundException.class)
     @ResponseBody
     public Map<String, Object> forbidden(HttpServletRequest req, Exception e) throws Exception {
@@ -76,10 +77,11 @@ Spring Boot中实现了默认的error映射，但是在实际应用中，默认�
     	result.put("name", "404");
     	return result;
     }  
+```
 
+除了上面的这种方法，也可以实现ErrorController。这样，springboot就不会自动创建BasicErrorController了，就会调用我们自己实现的Controller。
 
-除了上面的这种方法，也可以实现ErrorController。这样，springboot就不会自动创建BasicErrorController了，就会调用我们自己实现的Controller。 
-
+```java
     package com.example.demo;
     
     import java.util.HashMap;
@@ -160,3 +162,4 @@ Spring Boot中实现了默认的error映射，但是在实际应用中，默认�
      
     
     }
+```
