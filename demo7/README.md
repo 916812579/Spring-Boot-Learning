@@ -1,7 +1,7 @@
 # Spring Boot中Web应用的统一异常处理
-- 参考：[http://blog.didispace.com/springbootexception/](http://blog.didispace.com/springbootexception/)
-- 参考：[http://www.jianshu.com/p/6e7651705d29](http://www.jianshu.com/p/6e7651705d29)
-- 参考：[https://www.2cto.com/kf/201704/625169.html](https://www.2cto.com/kf/201704/625169.html)
+- 参考：[http://blog.didispace.com/springbootexception/](http://blog.didispace.com/springbootexception/?_blank)
+- 参考：[http://www.jianshu.com/p/6e7651705d29](http://www.jianshu.com/p/6e7651705d29?_blank)
+- 参考：[https://www.2cto.com/kf/201704/625169.html](https://www.2cto.com/kf/201704/625169.html?_blank)
 
 Web应用Spring Boot提供了一个默认的映射：/error，当处理中抛出异常之后，会转到该请求中处理，并且该请求有一个全局的错误页面用来展示异常内容。
 
