@@ -65,9 +65,9 @@ Spring Boot中实现了默认的error映射，但是在实际应用中，默认�
     	}
     
     }
- ```java
+ ```
 如果期望返回JSON格式，则需要添加`@ResponseBody`注解
-```java
+```
     @ExceptionHandler(value = NoHandlerFoundException.class)
     @ResponseBody
     public Map<String, Object> forbidden(HttpServletRequest req, Exception e) throws Exception {
