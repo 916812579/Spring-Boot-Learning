@@ -4,7 +4,7 @@
 
 # 创建定时任务
 
-- 在```Spring Boot```的主类中加入```@EnableScheduling``注解，启用定时任务的配置
+- 在```Spring Boot```的主类中加入```@EnableScheduling```注解，启用定时任务的配置
 
 ```java
 package com.example.demo;
