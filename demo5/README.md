@@ -3,50 +3,51 @@
 
 ## 数据源配置
 为了连接数据库需要引入jdbc支持，在pom.xml中引入如下配置：
-
-    <dependency>
+```xml
+   <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-jdbc</artifactId>
     </dependency>
-
+```
 嵌入式数据库支持
 
 Spring Boot提供自动配置的嵌入式数据库有H2、HSQL、Derby，不需要提供任何连接配置就能使用。
-
+```xml
     <dependency>
         <groupId>org.hsqldb</groupId>
         <artifactId>hsqldb</artifactId>
         <scope>runtime</scope>
     </dependency>
-
+```
 连接生产数据源
-
+```xml
     <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.21</version>
     </dependency>
-
+```
 在src/main/resources/application.properties中配置数据源信息
-
+```
     spring.datasource.url=jdbc:mysql://localhost:3306/test
     spring.datasource.username=dbuser
     spring.datasource.password=dbpass
     spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-
+```
 使用JdbcTemplate操作数据库
 
 Spring的JdbcTemplate是自动配置的，你可以直接使用@Autowired来注入到你自己的bean中来使用
-
 User表
+```sql
     CREATE TABLE T_USER (
     	id INT PRIMARY KEY auto_increment,
     	NAME VARCHAR (50),
     	age INT
     );
-
+```
 业务接口类UserService
-    package com.example.demo.service;
+```java
+   package com.example.demo.service;
     
     public interface UserService {
     	/**
@@ -74,7 +75,9 @@ User表
     	 */
     	void deleteAllUsers();
     }
+```
 业务接口实现类
+```java
     package com.example.demo.service.impl;
     
     import org.springframework.beans.factory.annotation.Autowired;
@@ -109,15 +112,16 @@ User表
     		jdbcTemplate.update("delete from T_USER");
     	}
     }
- 
+``` 
 application.properties配置
-
+```
     spring.datasource.url=jdbc:mysql://192.168.116.10:3306/test
     spring.datasource.username=root
     spring.datasource.password=root
     spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-
+```
 ApplicationTests测试类编写
+```java
     package com.example.demo;
     
      
@@ -162,4 +166,5 @@ ApplicationTests测试类编写
     	}	
     
     }
+```
   
