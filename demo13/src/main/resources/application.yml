@@ -1,0 +1,20 @@
+spring: 
+    mail:
+        host: smtp.qq.com
+        username: 916812579@qq.com
+        # \u817e\u8baf\u90ae\u7bb1\u6388\u6743\u7801
+        password: pphdkjvbldzsbbdg
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls: 
+                         enable: true
+                         required: true
+                    ssl:
+                         enable: true
+                    socketFactory:
+                         class: javax.net.ssl.SSLSocketFactory
+                   
+
+ 
