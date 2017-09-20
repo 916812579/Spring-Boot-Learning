@@ -80,7 +80,30 @@ public class User {
 
 ```
 > 由于配置了`hibernate.hbm2ddl.auto`，因此会自动创建表结构的
+- UserRepository
+```java
+package com.example.demo.repository;
 
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.User;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+	
+	User findByName(String name);
+
+	User findByNameAndAge(String name, Integer age);
+
+	@Query("from User u where u.name=:name")
+	User findUser(@Param("name") String name);
+}
+
+```
 
 - 测试代码
 
