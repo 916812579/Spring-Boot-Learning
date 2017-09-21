@@ -19,6 +19,14 @@ spring boot配置控制台彩色日志[http://www.cnblogs.com/lixuwu/p/5804793.h
 - [Spring Boot中使用@Async实现异步调用](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo10)
 - [Spring Boot中使用AOP统一处理Web请求日志](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo11)
 
+- [Spring Boot中使用Spring Security进行安全控制](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo12)
+- [Spring Boot中使用JavaMailSender发送邮件](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo13)
+- [Spring Boot中使用Spring-data-jpa让数据访问更简单、更优雅](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo14)
+- [Spring Boot中的缓存支持（一）注解配置与EhCache使用](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo15)
+- [Spring Boot中的缓存支持（二）使用Redis做集中式缓存](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo16)
+- [Spring Boot整合MyBatis](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo17)
+- [Spring Boot Actuator监控端点小结](https://github.com/916812579/Spring-Boot-Learning/tree/master/demo18)
+
 
 
 # Spring Boot中的事务管理
