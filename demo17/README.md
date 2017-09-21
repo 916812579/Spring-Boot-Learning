@@ -1,6 +1,7 @@
 # Spring Boot整合MyBatis
 
 - 参考：[http://blog.didispace.com/springbootmybatis/](http://blog.didispace.com/springbootmybatis/)
+- 参考：[http://blog.didispace.com/mybatisinfo/](http://blog.didispace.com/mybatisinfo/)
 
 ## 配置
 
@@ -102,6 +103,55 @@ public class ApplicationTests {
 		Assert.assertEquals(20, u.getAge().intValue());
 	}
 }
+```
+
+## MyBatis注解配置详解
+
+### 传参方式
+
+- 使用`@Param`
+
+
+```java
+@Insert("INSERT INTO user(NAME, AGE) VALUES(#{name}, #{age})")
+int insert(@Param("name") String name, @Param("age") Integer age);
+``` 
+
+`@Param`中定义的`name`对应了SQL中的`#{name}`，`age`对应了SQL中的`#{age}`。
+
+- 使用`Map`
+
+```java
+@Insert("INSERT INTO USER(NAME, AGE) VALUES(#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})")
+int insertByMap(Map<String, Object> map);
+```
+传递参数时，`map`中需要包含`key`为`name`和`age`的键值对
+
+- 使用对象(pojo)
+
+```java
+@Insert("INSERT INTO USER(NAME, AGE) VALUES(#{name}, #{age})")
+int insertByUser(User user);
+```
+这样`#{name}`、`#{age}`就分别对应了User对象中的`name`和`age`属性
+
+### 增删改查
+- `@Insert`
+- `@Delete`
+- `@Update`
+- `@Select`
+
+### 返回结果的绑定
+
+- 通过`@Results`和`@Result`注解来进行绑定
+
+```java
+@Results({
+    @Result(property = "name", column = "name"),
+    @Result(property = "age", column = "age")
+})
+@Select("SELECT name, age FROM user")
+List<User> findAll();
 ```
 
 
