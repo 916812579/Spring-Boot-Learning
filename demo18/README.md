@@ -91,8 +91,8 @@ management:
 ```
 
 该报告内容将自动化配置内容分为两部分：
-- `positiveMatches`中返回的是条件匹配成功的自动化配置
-- `negativeMatches`中返回的是条件匹配不成功的自动化配置
+> - `positiveMatches`中返回的是条件匹配成功的自动化配置
+> - `negativeMatches`中返回的是条件匹配不成功的自动化配置
 
 
 - `/beans`：该端点用来获取应用上下文中创建的所有Bean。
